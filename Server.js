@@ -1,8 +1,15 @@
 const express = require("express")
 const mongoose = require("mongoose")
 
+// const cors = require("cors") 
+// const dburl="mongodb://localhost:27017/VarunJulers"
+// mongoose.connect(dburl).then(() => {
+//     console.log("Connected to DB Successfully")
+// }).catch((err) => {
+//    console.log(err.message) 
+// });
 const cors = require("cors") 
-const dburl="mongodb://localhost:27017/VarunJulers"
+const dburl="mongodb+srv://gopinadh:Gopinadh9@cluster0.u4gj6x4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 mongoose.connect(dburl).then(() => {
     console.log("Connected to DB Successfully")
 }).catch((err) => {
