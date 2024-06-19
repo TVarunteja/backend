@@ -23,11 +23,13 @@ app.use(cors())
 const  adminrouter = require("./routes/adminrouts")
 const  md1 = require("./routes/md1routs")
 const  md2 = require("./routes/md2routs")
+const  takenaway = require("./routes/takenawayrouts")
 
 
 app.use("",adminrouter) 
 app.use("",md1)
 app.use("",md2)
+app.use("",takenaway)
 
 
 const port=2033
