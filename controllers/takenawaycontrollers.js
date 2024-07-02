@@ -1,6 +1,5 @@
 const Takenaway = require("../models/Takenaway");
 
-// Insert takenaway function
 const takenawaycustomer = async (request, response) => {
     try {
         const input = request.body;
@@ -10,7 +9,7 @@ const takenawaycustomer = async (request, response) => {
             return response.status(400).send('Bill number must be unique.');
         }
         
-        const takenaway = new takenaway(input);
+        const takenaway = new Takenaway(input);
         await takenaway.save();
         response.send('Added Successfully');
     } catch (e) {
@@ -21,4 +20,17 @@ const takenawaycustomer = async (request, response) => {
         }
     }
 };
-module.exports = {takenawaycustomer};
+const viewcustomer = async (request, response) => {
+    try {
+        const takenaway = await Takenaway.find();
+        if (takenaway.length === 0) {
+            response.send("DATA NOT FOUND");
+        } else {
+            response.json(takenaway);
+        }
+    } catch (error) {
+        response.status(500).send(error.message);
+    }
+};
+
+module.exports = { takenawaycustomer,viewcustomer };

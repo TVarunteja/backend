@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const takenawaysSchema = new mongoose.Schema({
+const takenawaySchema = new mongoose.Schema({
     date: {
         type: Number,
         required: true
@@ -13,12 +13,10 @@ const takenawaysSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
-        // No unique constraint for name
     },
     fathername: {
         type: String,
         required: true
-        // No unique constraint for fathername
     },
     address: {
         type: String,
@@ -27,7 +25,6 @@ const takenawaysSchema = new mongoose.Schema({
     phonenumber: {
         type: Number,
         required: true
-        // No unique constraint for phonenumber
     },
     itemtype: {
         type: String,
@@ -36,15 +33,13 @@ const takenawaysSchema = new mongoose.Schema({
     amount: {
         type: Number,
         required: true
-        // No unique constraint for amount
     },
     thereat: {
         type: String,
         required: true
-        // No unique constraint for amount
     }
 });
 
-const Takenaways = mongoose.model('Takenaway', takenawaysSchema);
+const Takenaway = mongoose.model('Takenaway', takenawaySchema);
 
-module.exports = Takenaways;
+module.exports = Takenaway;
